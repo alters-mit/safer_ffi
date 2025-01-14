@@ -16,8 +16,9 @@ use crate::layout::ConcreteReprC;
 /// [discriminant elision]: https://doc.rust-lang.org/1.78.0/core/option/index.html#representation
 #[cfg_attr(feature = "stabby", stabby::stabby)]
 #[repr(C, u8)]
-#[derive(Debug, Clone, Copy, Hash, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Debug, Clone, Copy, Hash, PartialEq, Eq, PartialOrd, Ord, Default)]
 pub enum TaggedOption<T> {
+    #[default]
     None = 0,
     Some(T) = 1,
 }
