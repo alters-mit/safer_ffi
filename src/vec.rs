@@ -193,6 +193,12 @@ impl<T : fmt::Debug + ReprC> fmt::Debug
     }
 }
 
+impl<T: Default> Default for Vec<T> {
+    fn default() -> Self {
+        rust::Vec::default().into()
+    }
+}
+
 #[macro_export]
 macro_rules! c_vec { [$($input:tt)*] => (
     $crate::prelude::repr_c::Vec::from($crate::ඞ::vec![ $($input)* ])
