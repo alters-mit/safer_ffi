@@ -113,11 +113,6 @@ cfg_alloc! {
                 f(s)
             })
         }
-
-        pub fn as_str(&self) -> &str {
-            // It's OK to unwrap this because the only way to create the string is to derive it from an existing valid string. 
-            std::str::from_utf8(&self.0).unwrap()
-        }
     }
 
     impl Clone for String {
