@@ -123,4 +123,10 @@ cfg_alloc! {
             Self(self.0.clone())
         }
     }
+
+    impl Default for String {
+        fn default() -> Self {
+            rust::String::default().into()
+        }
+    }
 }
